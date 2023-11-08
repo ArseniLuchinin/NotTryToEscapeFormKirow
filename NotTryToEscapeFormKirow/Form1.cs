@@ -10,11 +10,24 @@ namespace NotTryToEscapeFormKirow
         private void Form1_Load(object sender, EventArgs e)
         {
             MakeFullSkreen();
-
-            MainMenu = new Page(button1, button2, button3);
-            //MainMenu.Close();
-
-
+            MainMenu = new Page(
+                this,
+                SystemColors.ControlText, 
+                button1, 
+                button2, 
+                button3, 
+                richTextBox1, 
+                pictureBox1
+                );
+            MainMenu.Open();
+        }
+        private void MainMenuInicize()
+        {
+            richTextBox1 = new RichTextBox();
+            button3 = new Button();
+            button1 = new Button();
+            pictureBox1 = new PictureBox();
+            button2 = new Button();
         }
         private void MakeFullSkreen()
         {

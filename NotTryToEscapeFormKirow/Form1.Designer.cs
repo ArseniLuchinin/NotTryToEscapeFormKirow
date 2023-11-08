@@ -30,13 +30,30 @@ namespace NotTryToEscapeFormKirow
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            pictureBox1 = new PictureBox();
-            richTextBox1 = new RichTextBox();
+            MainMenuInicize();
+
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button3.AutoSize = true;
+            button3.BackColor = Color.Maroon;
+            button3.FlatAppearance.BorderColor = Color.FromArgb(64, 0, 0);
+            button3.FlatAppearance.BorderSize = 2;
+            button3.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 0, 0);
+            button3.FlatAppearance.MouseOverBackColor = Color.Maroon;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Impact", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.Location = new Point(293, 813);
+            button3.Name = "button3";
+            button3.Size = new Size(559, 107);
+            button3.TabIndex = 2;
+            button3.Text = "Выйти";
+            button3.UseVisualStyleBackColor = false;
+            button3.Visible = false;
+            button3.Click += button3_Click;
             // 
             // button1
             // 
@@ -55,7 +72,22 @@ namespace NotTryToEscapeFormKirow
             button1.TabIndex = 0;
             button1.Text = "Описание";
             button1.UseVisualStyleBackColor = false;
+            button1.Visible = false;
             button1.Click += button1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.Image = Properties.Resources.MainMenuKirow;
+            pictureBox1.Location = new Point(1179, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(443, 570);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            pictureBox1.Visible = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // button2
             // 
@@ -75,60 +107,29 @@ namespace NotTryToEscapeFormKirow
             button2.TabIndex = 1;
             button2.Text = "Бесконечный режим";
             button2.UseVisualStyleBackColor = false;
+            button2.Visible = false;
             button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button3.AutoSize = true;
-            button3.BackColor = Color.Maroon;
-            button3.FlatAppearance.BorderColor = Color.FromArgb(64, 0, 0);
-            button3.FlatAppearance.BorderSize = 2;
-            button3.FlatAppearance.MouseDownBackColor = Color.FromArgb(64, 0, 0);
-            button3.FlatAppearance.MouseOverBackColor = Color.Maroon;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Impact", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(293, 813);
-            button3.Name = "button3";
-            button3.Size = new Size(559, 107);
-            button3.TabIndex = 2;
-            button3.Text = "Выйти";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox1.ErrorImage = null;
-            pictureBox1.Image = Properties.Resources.MainMenuKirow;
-            pictureBox1.Location = new Point(1179, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(443, 570);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // richTextBox1
             // 
             richTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             richTextBox1.BackColor = SystemColors.InfoText;
             richTextBox1.BorderStyle = BorderStyle.None;
-            richTextBox1.Font = new Font("Impact", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBox1.Font = new Font("Impact", 56F, FontStyle.Regular, GraphicsUnit.Point);
             richTextBox1.ForeColor = Color.Maroon;
-            richTextBox1.Location = new Point(293, 50);
+            richTextBox1.Location = new Point(70, 49);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ScrollBars = RichTextBoxScrollBars.None;
-            richTextBox1.Size = new Size(746, 102);
+            richTextBox1.Size = new Size(1075, 245);
             richTextBox1.TabIndex = 4;
             richTextBox1.Text = "Не пытайтесь покинуть Киров";
-            //richTextBox1.SelectionAlignment = HorizontalAlignment.Center; ;
+            richTextBox1.Visible = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlText;
+            
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1622, 1033);
             Controls.Add(richTextBox1);
@@ -145,12 +146,11 @@ namespace NotTryToEscapeFormKirow
         }
 
         #endregion
-
-        private Button button1;
-        private Button button2;
-        private Button button3;
         Page MainMenu;
+        private Button button3;
+        private Button button1;
         private PictureBox pictureBox1;
+        private Button button2;
         private RichTextBox richTextBox1;
     }
 }
