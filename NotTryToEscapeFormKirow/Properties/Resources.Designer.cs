@@ -63,9 +63,60 @@ namespace NotTryToEscapeFormKirow.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dis {
+            get {
+                object obj = ResourceManager.GetObject("Dis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы, назначены ответственным за проверку документов и багажа, людей пытающися покинуть Киров.
+        ///Это очень ответсвенная должность, у вас нет права подвести соотечественников и позволить покинуть Киров, тем кто этого права не имеет.
+        ///А так же допустить вывоз с территории Кирова, вещей, которые не могут быть вывезены.
+        ///Ознакомьтесь с инстурукцией и приступайте к работе..
+        /// </summary>
+        internal static string gameDescription {
+            get {
+                return ResourceManager.GetString("gameDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Гражданин, пытающийся покинуть Киров, должен иметь при себе слудующие документы:
+        ///— Действующий паспорт;
+        ///— Именной лист прививок:
+        ///	— 4 обзательных
+        ///		— дифтерия, 
+        ///		— столбняка
+        ///		— кори,
+        ///		— гепатита.
+        ///	— от нуля до нескольких дополнительных, ежедневно обновляемых, в зависимости от эпидемологической обстановки в Кирове и вне его;
+        ///— Документ разрешающий покинуть Киров, с печатью ответственного за мигрирующих;
+        ///	Примечание: У вас есть список ответсвенных за миграцию с образцами их печатей, вы всегда мож [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string GameRules {
+            get {
+                return ResourceManager.GetString("GameRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hVRJZhy0kS8 {
             get {
                 object obj = ResourceManager.GetObject("hVRJZhy0kS8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainMenuBack {
+            get {
+                object obj = ResourceManager.GetObject("MainMenuBack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
