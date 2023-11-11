@@ -9,6 +9,7 @@ namespace NotTryToEscapeFormKirow
 {
     class Page
     {
+        public bool isOpen { get; private set; }
         private Control[] Elements;
         public event EventHandler OpenEvent;
         public event EventHandler CloseEvent;
@@ -17,17 +18,21 @@ namespace NotTryToEscapeFormKirow
             Elements = arr;
         }
         public void Close() {
+            isOpen = false;
             foreach (Control c in Elements) 
                 c.Visible = false;
 
-            CloseEvent(this, new EventArgs());
+           if(CloseEvent!=null)
+                CloseEvent(this, new EventArgs());
         }
         public void Open()
-        {   
+        {
+            isOpen = true;
             foreach (Control c in Elements)
                 c.Visible = true;
 
-            OpenEvent(this, new EventArgs());
+            if(OpenEvent != null)
+                OpenEvent(this, new EventArgs());
         }
     }
 }

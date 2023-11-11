@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace NotTryToEscapeFormKirow
 {
-    partial class Form1
+    partial class Form1 : Form
     {
         private void MainMenuInicize()
         {
@@ -111,6 +111,41 @@ namespace NotTryToEscapeFormKirow
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+
+            MainMenu = new Page(
+                GameName,
+                pictureBox1,
+                button1,
+                button2,
+                button3
+                );
+
+            MainMenu.OpenEvent += OpenMainMenu;
+            MainMenu.CloseEvent += CloseMainMenu;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainMenu.Close();
+            Description.Open();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MainMenu.Close();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void OpenMainMenu(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.MainMenuBack;
+        }
+        private void CloseMainMenu(object sender, EventArgs e)
+        {
+            this.BackColor = SystemColors.Window;
         }
     }
 }
