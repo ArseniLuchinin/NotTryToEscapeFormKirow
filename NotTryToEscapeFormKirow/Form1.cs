@@ -1,4 +1,7 @@
 using System.Windows.Forms;
+using MultiPage;
+using MainMenu;
+using Rules;
 
 namespace NotTryToEscapeFormKirow
 {
@@ -11,16 +14,22 @@ namespace NotTryToEscapeFormKirow
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MainMenuInicize();
+            MainMenu = new MainMenuPage(Controls);
+            MainMenu.StartBtn.Click += StartGame;
+            MainMenu.DescriptionBtn.Click += OpenDescription;
+            MainMenu.OutBtn.Click += CloseGame;
+            MainMenu.OpenEvent += OpenMainMenu;
+            MainMenu.CloseEvent += CloseMainMenu;
+
+
             DescriptionInicize();
-            RulesIniciaze();
 
-
+            Rules = new RulesPage(Controls);
+            Rules.OutBtn.Click += OutInMenu;
 
             MakeFullSkreen();
-            MainMenu.Open();
-            
 
+            MainMenu.Open();
         }
         private void MakeFullSkreen()
         {
@@ -32,5 +41,37 @@ namespace NotTryToEscapeFormKirow
         }
 
 
+        private void OpenDescription(object sender, EventArgs e)
+        {
+            MainMenu.Close();
+            Description.Open();
+        }
+
+        private void StartGame(object sender, EventArgs e)
+        {
+            MainMenu.Close();
+        }
+        private void CloseGame(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void OpenMainMenu(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.MainMenuBack;
+        }
+        private void CloseMainMenu(object sender, EventArgs e)
+        {
+            this.BackColor = SystemColors.Window;
+        }
+
+        private void OutInMenu(object sender, EventArgs e)
+        {
+            if (Rules.isOpen)
+            {
+                Rules.Close();
+                MainMenu.Open();
+            }
+        }
     }
 }

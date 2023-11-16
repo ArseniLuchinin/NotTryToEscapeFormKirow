@@ -5,18 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NotTryToEscapeFormKirow
+namespace MultiPage
 {
     class Page
-    {
+    {   
         public bool isOpen { get; private set; }
-        private Control[] Elements;
+        protected Control[] Elements;
         public event EventHandler OpenEvent;
         public event EventHandler CloseEvent;
         public Page(params Control[] arr)
         {
             Elements = arr;
         }
+
+
         public void Close() {
             isOpen = false;
             foreach (Control c in Elements) 

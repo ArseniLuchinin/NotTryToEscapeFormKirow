@@ -1,4 +1,6 @@
 ﻿using System.Windows.Forms;
+using MultiPage;
+
 
 namespace NotTryToEscapeFormKirow
 {
@@ -37,18 +39,11 @@ namespace NotTryToEscapeFormKirow
         }
 
         #endregion
-        Page MainMenu;
+        MainMenu.MainMenuPage MainMenu;
         Page Description;
-        Page Rules;
+        Rules.RulesPage Rules;
 
-        private Button button3;
-        private Button button1;
-        private PictureBox pictureBox1;
-        private Button button2;
-        private Label GameName;
+        
         private Label label1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private Button button4;
     }
 }

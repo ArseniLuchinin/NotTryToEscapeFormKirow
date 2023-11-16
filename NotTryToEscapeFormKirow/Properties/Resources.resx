@@ -142,4 +142,10 @@
   <data name="Instruction2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Instruction2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LastNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LastNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Names" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Names.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>
