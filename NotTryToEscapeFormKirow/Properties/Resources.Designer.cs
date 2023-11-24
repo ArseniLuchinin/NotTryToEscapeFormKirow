@@ -71,6 +71,25 @@ namespace NotTryToEscapeFormKirow.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Корона вирус/Туберкулёз/Грип/Эбола/Чума/Испанка.
+        /// </summary>
+        internal static string dopVak {
+            get {
+                return ResourceManager.GetString("dopVak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Eyes {
+            get {
+                object obj = ResourceManager.GetObject("Eyes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вы, назначены ответственным за проверку документов и багажа, людей пытающися покинуть Киров.
         ///Это очень ответсвенная должность, у вас нет права подвести соотечественников и позволить покинуть Киров, тем кто этого права не имеет.
         ///А так же допустить вывоз с территории Кирова, вещей, которые не могут быть вывезены.
@@ -93,8 +112,9 @@ namespace NotTryToEscapeFormKirow.Properties {
         ///		— кори,
         ///		— гепатита.
         ///	— от нуля до нескольких дополнительных, ежедневно обновляемых, в зависимости от эпидемологической обстановки в Кирове и вне его;
-        ///— Документ разрешающий покинуть Киров, с печатью ответственного за мигрирующих;
-        ///	Примечание: У вас есть список ответсвенных за миграцию с образцами их печатей, вы всегда м [остаток строки не уместился]&quot;;.
+        ///
+        ///— Документ разрешающий покинуть Киров, с печатью ответственного за мигрирующих
+        ///	Примечание: У вас есть список ответсвенных за миграцию с образцами их печатей, вы всегда  [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string GameRules {
             get {
@@ -118,16 +138,6 @@ namespace NotTryToEscapeFormKirow.Properties {
         internal static System.Drawing.Bitmap Instruction1 {
             get {
                 object obj = ResourceManager.GetObject("Instruction1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Instruction2 {
-            get {
-                object obj = ResourceManager.GetObject("Instruction2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -201,6 +211,16 @@ namespace NotTryToEscapeFormKirow.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap listP {
+            get {
+                object obj = ResourceManager.GetObject("listP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MainMenuBack {
             get {
                 object obj = ResourceManager.GetObject("MainMenuBack", resourceCulture);
@@ -214,6 +234,25 @@ namespace NotTryToEscapeFormKirow.Properties {
         internal static System.Drawing.Bitmap MainMenuKirow {
             get {
                 object obj = ResourceManager.GetObject("MainMenuKirow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дифтерия/Столбняк/корь/Гепатит.
+        /// </summary>
+        internal static string mainVak {
+            get {
+                return ResourceManager.GetString("mainVak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Months {
+            get {
+                object obj = ResourceManager.GetObject("Months", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -267,6 +306,26 @@ namespace NotTryToEscapeFormKirow.Properties {
         internal static string Names {
             get {
                 return ResourceManager.GetString("Names", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Noses {
+            get {
+                object obj = ResourceManager.GetObject("Noses", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pasport {
+            get {
+                object obj = ResourceManager.GetObject("Pasport", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

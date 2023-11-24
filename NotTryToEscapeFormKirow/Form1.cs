@@ -2,6 +2,7 @@ using System.Windows.Forms;
 using MultiPage;
 using MainMenu;
 using Rules;
+using Generator;
 
 namespace NotTryToEscapeFormKirow
 {
@@ -29,7 +30,10 @@ namespace NotTryToEscapeFormKirow
 
             MakeFullSkreen();
 
+            pasport1.SetPasport(new PasportGenerator());
+
             MainMenu.Open();
+
         }
         private void MakeFullSkreen()
         {
@@ -49,7 +53,9 @@ namespace NotTryToEscapeFormKirow
 
         private void StartGame(object sender, EventArgs e)
         {
-            MainMenu.Close();
+            //MainMenu.Close();
+            pasport1.SetPasport(new PasportGenerator());
+            vaccinationList1.setVCList(new randomVCList());
         }
         private void CloseGame(object sender, EventArgs e)
         {
@@ -72,6 +78,16 @@ namespace NotTryToEscapeFormKirow
                 Rules.Close();
                 MainMenu.Open();
             }
+        }
+
+        private void pasport1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vaccinationList1_Load(object sender, EventArgs e)
+        {
+            vaccinationList1.setVCList(new randomVCList());
         }
     }
 }

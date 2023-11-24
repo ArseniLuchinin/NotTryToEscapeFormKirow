@@ -27,7 +27,7 @@ namespace Rules
             // pictureBox1
             // 
             Inxtruction2.BackColor = Color.Transparent;
-            Inxtruction2.Image = Resources.Instruction2;
+            //Inxtruction2.Image = Resources.Instruction2;
             Inxtruction2.Location = new Point(961, 12);
             Inxtruction2.Name = "pictureBox3";
             Inxtruction2.Size = new Size(808, 1009);
