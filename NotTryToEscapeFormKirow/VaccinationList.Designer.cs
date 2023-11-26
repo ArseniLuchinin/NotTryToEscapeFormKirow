@@ -37,7 +37,7 @@
             BackgroundImage = Properties.Resources.listP;
             BackgroundImageLayout = ImageLayout.None;
             Controls.Add(label1);
-            base.Name = "FormVaccinationList";
+            Name = "FormVaccinationList";
             Size = new Size(372, 522);
             ResumeLayout(false);
             PerformLayout();

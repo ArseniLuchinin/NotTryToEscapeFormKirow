@@ -12,7 +12,14 @@ namespace NotTryToEscapeFormKirow
         {
             InitializeComponent();
         }
-
+        private void randData()
+        {
+            Pasport pasport = new PasportGenerator();
+            pasport1.SetPasport(pasport);
+            NamedVaccinationList NVCL = new NamedVaccinationList(pasport, new randomVCList(), DateOnly.FromDateTime(DateTime.Now));
+            vaccinationList1.setInfo(NVCL);
+            permission1.setInfo(new OriginalPermission(pasport));
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             MainMenu = new MainMenuPage(Controls);
@@ -29,9 +36,7 @@ namespace NotTryToEscapeFormKirow
             Rules.OutBtn.Click += OutInMenu;
 
             MakeFullSkreen();
-
-            pasport1.SetPasport(new PasportGenerator());
-
+            randData();
             MainMenu.Open();
 
         }
@@ -54,8 +59,7 @@ namespace NotTryToEscapeFormKirow
         private void StartGame(object sender, EventArgs e)
         {
             //MainMenu.Close();
-            pasport1.SetPasport(new PasportGenerator());
-            vaccinationList1.setVCList(new randomVCList());
+            randData();
         }
         private void CloseGame(object sender, EventArgs e)
         {
@@ -78,16 +82,6 @@ namespace NotTryToEscapeFormKirow
                 Rules.Close();
                 MainMenu.Open();
             }
-        }
-
-        private void pasport1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vaccinationList1_Load(object sender, EventArgs e)
-        {
-            vaccinationList1.setVCList(new randomVCList());
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.CodeDom.Compiler;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using NotTryToEscapeFormKirow;
 using NotTryToEscapeFormKirow.Properties;
 
 namespace Generator
@@ -36,7 +37,6 @@ namespace Generator
         private Random MainRandom = new Random();
         String[] Names = Resources.Names.Split('\n');
         String[] LastNames = Resources.LastNames.Split('\n');
-        String[] Patronymics;
         public PasportGenerator()
         {
             Image a = Resources.Eyes;
@@ -69,7 +69,7 @@ namespace Generator
         }
         private void generateFoto()
         {
-            Bitmap bmp = new Bitmap(300, 350);
+            Bitmap bmp = new Bitmap(170, 200);
 
             Graphics g = Graphics.FromImage(bmp);
             g.Clear(Color.White);
@@ -87,8 +87,8 @@ namespace Generator
             int W = Resources.Eyes.Width / 3, H = Resources.Eyes.Height / 2;
             Rectangle selection = new Rectangle(
                 new Point(
-                    (300 / 2) - W / 2,
-                    (2 * 350 / 7) - (H / 2)),
+                    (170 / 2) - W / 2,
+                    (2 * 200 / 7) - (H / 2)),
                 new Size(W, H)
                 );
 
@@ -111,8 +111,8 @@ namespace Generator
             int W = Resources.Months.Width / 5, H = Resources.Months.Height;
             Rectangle selection = new Rectangle(
                 new Point(
-                    (300 / 2) - W / 2,
-                    (4 * 350 / 5) - (H / 2)),
+                    (170 / 2) - W / 2,
+                    (4 * 200 / 5) - (H / 2)),
                 new Size(W, H)
                 );
 
@@ -135,8 +135,8 @@ namespace Generator
             int W = Resources.Noses.Width, H = Resources.Noses.Height / 5;
             Rectangle selection = new Rectangle(
                 new Point(
-                    (300 / 2) - W / 2,
-                    (4 * 350 / 7) - (H / 2)),
+                    (170 / 2) - W / 2,
+                    (4 * 200 / 7) - (H / 2)),
                 new Size(W, H)
                 );
 

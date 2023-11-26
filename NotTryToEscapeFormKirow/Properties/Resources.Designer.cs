@@ -71,6 +71,16 @@ namespace NotTryToEscapeFormKirow.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DocumentToLiveFromKirow {
+            get {
+                object obj = ResourceManager.GetObject("DocumentToLiveFromKirow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Корона вирус/Туберкулёз/Грип/Эбола/Чума/Испанка.
         /// </summary>
         internal static string dopVak {
@@ -128,6 +138,16 @@ namespace NotTryToEscapeFormKirow.Properties {
         internal static System.Drawing.Bitmap hVRJZhy0kS8 {
             get {
                 object obj = ResourceManager.GetObject("hVRJZhy0kS8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IanaPechat {
+            get {
+                object obj = ResourceManager.GetObject("IanaPechat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
