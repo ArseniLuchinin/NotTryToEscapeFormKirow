@@ -4,10 +4,10 @@ namespace NotTryToEscapeFormKirow
 {   
     class NamedVaccinationList : VaccinationList
     {
-        public String Name { get; private set; }
-        public String LastName { get; private set; }
-        public DateOnly BornData { get; private set; }
-        public DateOnly Date { get; private set; }
+        public String Name { get; protected set; }
+        public String LastName { get; protected set; }
+        public DateOnly BornData { get; protected set; }
+        public DateOnly Date { get; protected set; }
 
         public NamedVaccinationList(Pasport p, VaccinationList vcl, DateOnly date)
         {
@@ -17,6 +17,7 @@ namespace NotTryToEscapeFormKirow
             Date = date;
             vaccinationList = vcl.vaccinationList;
         }
+        protected NamedVaccinationList() { }
 
     }
 

@@ -3,6 +3,7 @@ using MultiPage;
 using MainMenu;
 using Rules;
 using Generator;
+using System.Net.Http.Headers;
 
 namespace NotTryToEscapeFormKirow
 {
@@ -12,13 +13,11 @@ namespace NotTryToEscapeFormKirow
         {
             InitializeComponent();
         }
-        private void randData()
+
+        private void FormGame_KeyDown(object sender, KeyEventArgs e)
         {
-            Pasport pasport = new PasportGenerator();
-            pasport1.SetPasport(pasport);
-            NamedVaccinationList NVCL = new NamedVaccinationList(pasport, new randomVCList(), DateOnly.FromDateTime(DateTime.Now));
-            vaccinationList1.setInfo(NVCL);
-            permission1.setInfo(new OriginalPermission(pasport));
+            if (e.KeyCode == Keys.Escape)
+                formGame1.Visible = false;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -28,7 +27,7 @@ namespace NotTryToEscapeFormKirow
             MainMenu.OutBtn.Click += CloseGame;
             MainMenu.OpenEvent += OpenMainMenu;
             MainMenu.CloseEvent += CloseMainMenu;
-
+            formGame1.MakeFullSkreen(this);
 
             DescriptionInicize();
 
@@ -36,7 +35,7 @@ namespace NotTryToEscapeFormKirow
             Rules.OutBtn.Click += OutInMenu;
 
             MakeFullSkreen();
-            randData();
+
             MainMenu.Open();
 
         }
@@ -49,7 +48,10 @@ namespace NotTryToEscapeFormKirow
             label1.MaximumSize = label1.MinimumSize = label1.Size = new Size(Size.Width, 250);
         }
 
-
+        private void openMenu(object sender, EventArgs e)
+        {
+            MainMenu.Open();
+        }
         private void OpenDescription(object sender, EventArgs e)
         {
             MainMenu.Close();
@@ -58,8 +60,9 @@ namespace NotTryToEscapeFormKirow
 
         private void StartGame(object sender, EventArgs e)
         {
-            //MainMenu.Close();
-            randData();
+            MainMenu.Close();
+            formGame1.startGame();
+            
         }
         private void CloseGame(object sender, EventArgs e)
         {

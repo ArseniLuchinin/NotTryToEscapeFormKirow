@@ -63,6 +63,26 @@ namespace NotTryToEscapeFormKirow.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Approved {
+            get {
+                object obj = ResourceManager.GetObject("Approved", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Denied {
+            get {
+                object obj = ResourceManager.GetObject("Denied", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dis {
             get {
                 object obj = ResourceManager.GetObject("Dis", resourceCulture);
@@ -345,6 +365,16 @@ namespace NotTryToEscapeFormKirow.Properties {
         internal static System.Drawing.Bitmap Pasport {
             get {
                 object obj = ResourceManager.GetObject("Pasport", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Table {
+            get {
+                object obj = ResourceManager.GetObject("Table", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

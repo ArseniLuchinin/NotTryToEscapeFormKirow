@@ -16,7 +16,7 @@ namespace NotTryToEscapeFormKirow
         public bool stamp { get; protected set; }
         public String NameIana { get; protected set; }
         public String LastNameIana { get; protected set; }
-
+        protected OriginalPermission() { }
         public OriginalPermission(Pasport p)
         {
             Name = p.Name;

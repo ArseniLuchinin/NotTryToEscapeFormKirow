@@ -34,39 +34,49 @@ namespace Generator
 
     class PasportGenerator : Pasport
     {
-        private Random MainRandom = new Random();
-        String[] Names = Resources.Names.Split('\n');
-        String[] LastNames = Resources.LastNames.Split('\n');
+        protected Random MainRandom = new Random();
+        public static readonly String[] Names = Resources.Names.Split('\n');
+        public static readonly String[] LastNames = Resources.LastNames.Split('\n');
+        public PasportGenerator(byte a)
+        {
+
+        }
         public PasportGenerator()
         {
             Image a = Resources.Eyes;
             Generate();
         }
-
+        protected int YearToday = DateTime.Today.Year + 1;
+        protected int MonthToday = DateTime.Today.Month;
+        protected int DayToday = DateTime.Today.Day;
         private Pasport Generate()
         {
             Name = Names[MainRandom.Next(0,Names.Length)];
             LastName = LastNames[MainRandom.Next(0, LastNames.Length)];
             Id = MainRandom.Next(1000, 10000);
-            int YearToday = DateTime.Today.Year + 1;
-            int MonthToday = DateTime.Today.Month;
-            int DayToday = DateTime.Today.Day;
+            generateBornDate();
+            generatePasportDate();
+            generateFoto();
             
+            return this;
+        }
+        protected void generateBornDate()
+        {
             BornDate = new DateOnly(
                 MainRandom.Next(YearToday - 98, YearToday - 18),
-                MainRandom.Next(1,13),
+                MainRandom.Next(1, 13),
                 MainRandom.Next(1, 30)
                 );
-
+        }
+        protected void generatePasportDate()
+        {
             DatePasport = new DateOnly(
                 MainRandom.Next(YearToday, YearToday + 10),
                 MainRandom.Next(1, MonthToday),
                 MainRandom.Next(1, DayToday)
                 );
-            generateFoto();
-            
-            return this;
         }
+
         private void generateFoto()
         {
             Bitmap bmp = new Bitmap(170, 200);
