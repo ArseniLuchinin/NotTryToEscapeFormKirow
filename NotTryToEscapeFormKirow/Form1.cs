@@ -4,6 +4,7 @@ using MainMenu;
 using Rules;
 using Generator;
 using System.Net.Http.Headers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace NotTryToEscapeFormKirow
 {
@@ -21,6 +22,9 @@ namespace NotTryToEscapeFormKirow
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            PlayerName.Text = player.Name;
+            textBox1.Visible = false;
+            textBox1.Left = PlayerName.Left;
             MainMenu = new MainMenuPage(Controls);
             MainMenu.StartBtn.Click += StartGame;
             MainMenu.DescriptionBtn.Click += OpenDescription;
@@ -38,6 +42,7 @@ namespace NotTryToEscapeFormKirow
 
             MainMenu.Open();
 
+            formGame1.label2.Click += openMenu;
         }
         private void MakeFullSkreen()
         {
@@ -47,8 +52,11 @@ namespace NotTryToEscapeFormKirow
 
             label1.MaximumSize = label1.MinimumSize = label1.Size = new Size(Size.Width, 250);
         }
-
-        private void openMenu(object sender, EventArgs e)
+        public void closeMenu(object sender, EventArgs e)
+        {
+            MainMenu.Close();
+        }
+        public void openMenu(object sender, EventArgs e)
         {
             MainMenu.Open();
         }
@@ -62,7 +70,7 @@ namespace NotTryToEscapeFormKirow
         {
             MainMenu.Close();
             formGame1.startGame();
-            
+
         }
         private void CloseGame(object sender, EventArgs e)
         {
@@ -72,10 +80,12 @@ namespace NotTryToEscapeFormKirow
         private void OpenMainMenu(object sender, EventArgs e)
         {
             this.BackgroundImage = Properties.Resources.MainMenuBack;
+            PlayerName.Visible = true;
         }
         private void CloseMainMenu(object sender, EventArgs e)
         {
             this.BackColor = SystemColors.Window;
+            PlayerName.Visible = false;
         }
 
         private void OutInMenu(object sender, EventArgs e)
@@ -84,6 +94,29 @@ namespace NotTryToEscapeFormKirow
             {
                 Rules.Close();
                 MainMenu.Open();
+            }
+        }
+
+        private void PlayerName_Click(object sender, EventArgs e)
+        {
+            textBox1.Visible = true;
+        }
+
+
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar == (char)Keys.Enter;
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                player = new Player(textBox1.Text);
+                PlayerName.Text = player.Name;
+                textBox1.Visible = false;
+            }
+            e.Handled = e.KeyChar == (char)Keys.Escape;
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                textBox1.Visible = false;
             }
         }
     }

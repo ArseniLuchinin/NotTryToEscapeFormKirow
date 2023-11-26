@@ -27,18 +27,18 @@ namespace NotTryToEscapeFormKirow
         private void FormGame_Load(object sender, EventArgs e)
         {
             this.Visible = false;
-
+            
         }
-
-
+        
+        
         public void MakeFullSkreen(Form f)
         {
             this.Size = f.Size;
         }
         int good, bad;
-        public void startGame()
+        public void startGame() 
         {
-
+            mainVCL = new randomVCList();
             good = 0; bad = 0;
             Next();
             setScore();
@@ -63,9 +63,14 @@ namespace NotTryToEscapeFormKirow
         NamedVaccinationList NVCL;
         OriginalPermission orgPre;
         GameValidator game;
+
         private void Next()
         {
-            mainVCL = new randomVCList();
+            if (mainVCLItreration > 2)
+            {
+                mainVCL = new randomVCList();
+                mainVCLItreration = 0; 
+            }
             formVaccinationList1.setVCList(mainVCL);
 
             pasport = new PasportGenerator();
@@ -80,17 +85,18 @@ namespace NotTryToEscapeFormKirow
 
             game = new GameValidator(pasport, NVCL, mainVCL, orgPre);
 
-
+            mainVCLItreration++;
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {   
             Button bt = sender as Button;
             if (game.getDataValidation() && (bt.Name == "Approved"))
                 good++;
             else if (!game.getDataValidation() && (bt.Name == "Denied"))
                 good++;
-            else bad++;
+            else 
+                bad++;
             setScore();
             Next();
         }
@@ -107,12 +113,12 @@ namespace NotTryToEscapeFormKirow
             int len = r.Next(1, 3);
             for (int i = 0; i < len; i++)
             {
-                switch (r.Next(0, 3))
+                switch (r.Next(0, 4))
                 {
                     case 0:
                         pmg.GenerateMiss(ref pasport);
                         break;
-                    case 1:
+                    case 1:case 3:
                         vmg.GenerateMiss(ref NVCL);
                         break;
                     case 2:

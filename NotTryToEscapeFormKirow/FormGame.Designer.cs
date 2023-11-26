@@ -34,6 +34,7 @@
             permission1 = new Permission();
             Score = new Label();
             formVaccinationList1 = new FormVaccinationList();
+            label2 = new Label();
             button1 = new Button();
             button2 = new Button();
             SuspendLayout();
@@ -65,14 +66,14 @@
             permission1.Size = new Size(300, 200);
             permission1.TabIndex = 2;
             // 
-            // Score
+            // isValid
             // 
             Score.AutoSize = true;
             Score.BackColor = Color.Transparent;
             Score.Font = new Font("Segoe UI", 35F, FontStyle.Regular, GraphicsUnit.Point);
             Score.ForeColor = Color.Black;
             Score.Location = new Point(878, 40);
-            Score.Name = "Score";
+            Score.Name = "isValid";
             Score.Size = new Size(189, 78);
             Score.TabIndex = 3;
             Score.Text = "label2";
@@ -86,6 +87,19 @@
             formVaccinationList1.Size = new Size(377, 532);
             formVaccinationList1.TabIndex = 4;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(133, 38);
+            label2.TabIndex = 5;
+            label2.Text = "Перекур";
+            label2.Click += label2_Click;
+            // 
             // button1
             // 
             button1.BackColor = Color.LimeGreen;
@@ -94,7 +108,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.ImageAlign = ContentAlignment.TopCenter;
             button1.Location = new Point(3, 422);
-            button1.Name = "button1";
+            button1.Name = "Approved";
             button1.Size = new Size(357, 186);
             button1.TabIndex = 6;
             button1.UseVisualStyleBackColor = false;
@@ -108,7 +122,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.ImageAlign = ContentAlignment.TopCenter;
             button2.Location = new Point(3, 623);
-            button2.Name = "button2";
+            button2.Name = "Denied";
             button2.Size = new Size(357, 186);
             button2.TabIndex = 7;
             button2.UseVisualStyleBackColor = false;
@@ -121,6 +135,7 @@
             BackgroundImage = Properties.Resources.Table;
             Controls.Add(button2);
             Controls.Add(button1);
+            Controls.Add(label2);
             Controls.Add(formVaccinationList1);
             Controls.Add(Score);
             Controls.Add(permission1);

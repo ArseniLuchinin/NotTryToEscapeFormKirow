@@ -9,7 +9,7 @@ namespace NotTryToEscapeFormKirow
     {
 
         private System.ComponentModel.IContainer components = null;
-
+        Player player = new Player();
 
         protected override void Dispose(bool disposing)
         {
@@ -25,6 +25,8 @@ namespace NotTryToEscapeFormKirow
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             formGame1 = new FormGame();
+            PlayerName = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // formGame1
@@ -34,7 +36,29 @@ namespace NotTryToEscapeFormKirow
             formGame1.Name = "formGame1";
             formGame1.Size = new Size(188, 188);
             formGame1.TabIndex = 5;
-            formGame1.label2.Click += openMenu;
+            // 
+            // PlayerName
+            // 
+            PlayerName.AutoSize = true;
+            PlayerName.BackColor = Color.Transparent;
+            PlayerName.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            PlayerName.ForeColor = Color.White;
+            PlayerName.Location = new Point(1662, 9);
+            PlayerName.Name = "PlayerName";
+            PlayerName.Size = new Size(0, 41);
+            PlayerName.TabIndex = 6;
+            PlayerName.Click += PlayerName_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Maroon;
+            textBox1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(1662, 9);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(228, 47);
+            textBox1.TabIndex = 7;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // Form1
             // 
@@ -42,12 +66,15 @@ namespace NotTryToEscapeFormKirow
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1902, 1033);
+            Controls.Add(textBox1);
+            Controls.Add(PlayerName);
             Controls.Add(formGame1);
             Name = "Form1";
             Text = "Don't try escape from Kirov";
             Load += Form1_Load;
             KeyDown += FormGame_KeyDown;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -58,5 +85,7 @@ namespace NotTryToEscapeFormKirow
 
         private Label label1;
         private FormGame formGame1;
+        private Label PlayerName;
+        private TextBox textBox1;
     }
 }
