@@ -32,16 +32,16 @@ namespace Generator
         public Pasport() { }
     }
 
-    class PasportGenerator : Pasport
+    class RandomPasportGenerator : Pasport
     {
         protected Random MainRandom = new Random();
         public static readonly String[] Names = Resources.Names.Split('\n');
         public static readonly String[] LastNames = Resources.LastNames.Split('\n');
-        public PasportGenerator(byte a)
+        public RandomPasportGenerator(byte a)
         {
 
         }
-        public PasportGenerator()
+        public RandomPasportGenerator()
         {
             Image a = Resources.Eyes;
             Generate();

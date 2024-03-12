@@ -133,6 +133,9 @@
   <data name="listP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Instruction2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Instruction2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dis.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,13 +175,16 @@
   <data name="MainMenuKirow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MainMenuKirow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Denied" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Denied.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LastNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LastNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="hVRJZhy0kS8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hVRJZhy0kS8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Denied" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Denied.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Instruction2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Instruction2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

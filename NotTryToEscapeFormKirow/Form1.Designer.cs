@@ -1,7 +1,5 @@
 ﻿using System.Windows.Forms;
 using Generator;
-using MultiPage;
-
 
 namespace NotTryToEscapeFormKirow
 {
@@ -9,7 +7,7 @@ namespace NotTryToEscapeFormKirow
     {
 
         private System.ComponentModel.IContainer components = null;
-        Player player = new Player();
+        Player player;
 
         protected override void Dispose(bool disposing)
         {
@@ -25,40 +23,36 @@ namespace NotTryToEscapeFormKirow
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             formGame1 = new FormGame();
-            PlayerName = new Label();
-            textBox1 = new TextBox();
+            startMenu1 = new StartMenu();
+            instruction1 = new Instruction();
             SuspendLayout();
             // 
             // formGame1
             // 
             formGame1.BackgroundImage = (Image)resources.GetObject("formGame1.BackgroundImage");
-            formGame1.Location = new Point(-1, 1);
+            formGame1.Location = new Point(0, 0);
             formGame1.Name = "formGame1";
             formGame1.Size = new Size(188, 188);
             formGame1.TabIndex = 5;
             // 
-            // PlayerName
+            // startMenu1
             // 
-            PlayerName.AutoSize = true;
-            PlayerName.BackColor = Color.Transparent;
-            PlayerName.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            PlayerName.ForeColor = Color.White;
-            PlayerName.Location = new Point(1662, 9);
-            PlayerName.Name = "PlayerName";
-            PlayerName.Size = new Size(0, 41);
-            PlayerName.TabIndex = 6;
-            PlayerName.Click += PlayerName_Click;
+            startMenu1.BackgroundImage = (Image)resources.GetObject("startMenu1.BackgroundImage");
+            startMenu1.BackgroundImageLayout = ImageLayout.Stretch;
+            startMenu1.Location = new Point(0, 0);
+            startMenu1.Name = "startMenu1";
+            startMenu1.Size = new Size(1920, 1080);
+            startMenu1.TabIndex = 9;
             // 
-            // textBox1
+            // instruction1
             // 
-            textBox1.BackColor = Color.Maroon;
-            textBox1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(1662, 9);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(228, 47);
-            textBox1.TabIndex = 7;
-            textBox1.KeyPress += textBox1_KeyPress;
+            instruction1.BackgroundImage = (Image)resources.GetObject("instruction1.BackgroundImage");
+            instruction1.BackgroundImageLayout = ImageLayout.Stretch;
+            instruction1.Location = new Point(0, 0);
+            instruction1.Name = "instruction1";
+            instruction1.Size = new Size(2400, 1350);
+            instruction1.TabIndex = 10;
+            instruction1.Visible = false;
             // 
             // Form1
             // 
@@ -66,26 +60,23 @@ namespace NotTryToEscapeFormKirow
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1902, 1033);
-            Controls.Add(textBox1);
-            Controls.Add(PlayerName);
+            Controls.Add(startMenu1);
+            Controls.Add(instruction1);
             Controls.Add(formGame1);
             Name = "Form1";
             Text = "Don't try escape from Kirov";
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             KeyDown += FormGame_KeyDown;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        MainMenu.MainMenuPage MainMenu;
-        Page Description;
-        Rules.RulesPage Rules;
 
 
         private Label label1;
         private FormGame formGame1;
-        private Label PlayerName;
-        private TextBox textBox1;
+        private StartMenu startMenu1;
+        private Instruction instruction1;
     }
 }

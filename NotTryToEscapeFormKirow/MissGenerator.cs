@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace Generator
 {
-    class PasportMissGenerator : PasportGenerator
+    class PasportMissGenerator : RandomPasportGenerator
     {
         public PasportMissGenerator() : base(1) { }
         public void GenerateMiss(ref Pasport p)
@@ -78,10 +78,10 @@ namespace Generator
             switch (random.Next(0, 6))
             {
                 case 0:
-                    Name = PasportGenerator.Names[random.Next(0, PasportGenerator.Names.Length)];
+                    Name = RandomPasportGenerator.Names[random.Next(0, RandomPasportGenerator.Names.Length)];
                     break;
                 case 1:
-                    LastName = PasportGenerator.LastNames[random.Next(0, PasportGenerator.LastNames.Length)];
+                    LastName = RandomPasportGenerator.LastNames[random.Next(0, RandomPasportGenerator.LastNames.Length)];
                     break;
                 case 2:
                     generateVacin();
@@ -130,10 +130,10 @@ namespace Generator
             switch(random.Next(0,3))
             {
                 case 0:
-                    Name = PasportGenerator.Names[random.Next(0, PasportGenerator.Names.Length)];
+                    Name = RandomPasportGenerator.Names[random.Next(0, RandomPasportGenerator.Names.Length)];
                     break;
                 case 1:
-                    LastName = PasportGenerator.LastNames[random.Next(0, PasportGenerator.LastNames.Length)];
+                    LastName = RandomPasportGenerator.LastNames[random.Next(0, RandomPasportGenerator.LastNames.Length)];
                     break;
                 case 2:
                     Id = random.Next(1000, 9999);

@@ -13,37 +13,22 @@ using System.Windows.Forms.VisualStyles;
 
 namespace NotTryToEscapeFormKirow
 {
-    public partial class FormGame : UserControl
+    partial class FormGame : UserControl
     {
-        PasportMissGenerator pmg = new PasportMissGenerator();
-        MissNVCLGenerator vmg = new MissNVCLGenerator();
-        PermissionMissGenerator pemg = new PermissionMissGenerator();
-        Random r = new Random();
         public FormGame()
         {
             InitializeComponent();
         }
-
         private void FormGame_Load(object sender, EventArgs e)
         {
             this.Visible = false;
-            
         }
-        
-        
         public void MakeFullSkreen(Form f)
         {
             this.Size = f.Size;
         }
-        int good, bad;
-        public void startGame() 
-        {
-            mainVCL = new randomVCList();
-            good = 0; bad = 0;
-            Next();
-            setScore();
-            this.Visible = true;
-        }
+        public int good { get; private set; }
+        public int bad { get; private set; }
         private void setScore()
         {
             Score.Text = $"Правильно: {good} Ошибочно: {bad}";
@@ -53,81 +38,51 @@ namespace NotTryToEscapeFormKirow
                 );
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void exitClick(object sender, EventArgs e)
         {
             this.Visible = false;
         }
-        VaccinationList mainVCL;
-        int mainVCLItreration = 0;
-        Pasport pasport;
-        NamedVaccinationList NVCL;
-        OriginalPermission orgPre;
-        GameValidator game;
 
-        private void Next()
+        Game game;
+        public void startGame(Player player)
         {
-            if (mainVCLItreration > 2)
-            {
-                mainVCL = new randomVCList();
-                mainVCLItreration = 0; 
-            }
-            formVaccinationList1.setVCList(mainVCL);
-
-            pasport = new PasportGenerator();
-            NVCL = new NamedVaccinationList(pasport, mainVCL, DateOnly.FromDateTime(DateTime.Now));
-            orgPre = new OriginalPermission(pasport);
-
-            miss();
-
-            pasport1.SetPasport(pasport);
-            vaccinationList1.setInfo(NVCL);
-            permission1.setInfo(orgPre);
-
-            game = new GameValidator(pasport, NVCL, mainVCL, orgPre);
-
-            mainVCLItreration++;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {   
-            Button bt = sender as Button;
-            if (game.getDataValidation() && (bt.Name == "Approved"))
-                good++;
-            else if (!game.getDataValidation() && (bt.Name == "Denied"))
-                good++;
-            else 
-                bad++;
+            game = new Game();
+            good = 0; bad = 0;
+            updateMainVCL(game.VCL);
+            setDocuments(game.Next());
             setScore();
-            Next();
+            this.Visible = true;
+        }
+        private void setDocuments(Visitor v)
+        {
+            pasport1.SetPasport(v.pasport);
+            NVCL.setInfo(v.NVCL);
+            permission1.setInfo(v.permission);
+        }
+        private void decideClick(object sender, EventArgs e)
+        {
+            Button bt = sender as Button;
+            updateScore(bt);
+            setDocuments(game.Next());
+            updateMainVCL(game.VCL);
+        }
+        private void updateMainVCL(VaccinationList newVcl)
+        {
+            if(newVcl != null)
+                mainVCL.setVCList(newVcl);
         }
 
-        private void miss()
+        private void updateScore(Button bt)
         {
-            int shans = 100;
-            if (r.Next(0, shans) > shans / 2)
-                generateMiss();
-        }
+            bool isValidDocuments = game.getDataValidation();
+            if (isValidDocuments && (bt.Name == "Approved"))
+                good++;
+            else if (!isValidDocuments && (bt.Name == "Denied"))
+                good++;
+            else
+                bad++;
 
-        private void generateMiss()
-        {
-            int len = r.Next(1, 3);
-            for (int i = 0; i < len; i++)
-            {
-                switch (r.Next(0, 4))
-                {
-                    case 0:
-                        pmg.GenerateMiss(ref pasport);
-                        break;
-                    case 1:case 3:
-                        vmg.GenerateMiss(ref NVCL);
-                        break;
-                    case 2:
-                        pemg.GenerateMiss(ref orgPre);
-                        break;
-                }
-
-            }
-
+            setScore();
         }
     }
 }

@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGame));
             pasport1 = new FormPasport();
-            vaccinationList1 = new FormNamedVCList();
+            NVCL = new FormNamedVCList();
             permission1 = new Permission();
             Score = new Label();
-            formVaccinationList1 = new FormVaccinationList();
-            label2 = new Label();
+            mainVCL = new FormVaccinationList();
+            Exit_bt = new Label();
             button1 = new Button();
             button2 = new Button();
             SuspendLayout();
@@ -50,12 +50,12 @@
             // 
             // vaccinationList1
             // 
-            vaccinationList1.BackgroundImage = (Image)resources.GetObject("vaccinationList1.BackgroundImage");
-            vaccinationList1.BackgroundImageLayout = ImageLayout.None;
-            vaccinationList1.Location = new Point(821, 206);
-            vaccinationList1.Name = "vaccinationList1";
-            vaccinationList1.Size = new Size(375, 533);
-            vaccinationList1.TabIndex = 1;
+            NVCL.BackgroundImage = (Image)resources.GetObject("vaccinationList1.BackgroundImage");
+            NVCL.BackgroundImageLayout = ImageLayout.None;
+            NVCL.Location = new Point(821, 206);
+            NVCL.Name = "vaccinationList1";
+            NVCL.Size = new Size(375, 533);
+            NVCL.TabIndex = 1;
             // 
             // permission1
             // 
@@ -80,25 +80,25 @@
             // 
             // formVaccinationList1
             // 
-            formVaccinationList1.BackgroundImage = (Image)resources.GetObject("formVaccinationList1.BackgroundImage");
-            formVaccinationList1.BackgroundImageLayout = ImageLayout.None;
-            formVaccinationList1.Location = new Point(1232, 174);
-            formVaccinationList1.Name = "formVaccinationList1";
-            formVaccinationList1.Size = new Size(377, 532);
-            formVaccinationList1.TabIndex = 4;
+            mainVCL.BackgroundImage = (Image)resources.GetObject("formVaccinationList1.BackgroundImage");
+            mainVCL.BackgroundImageLayout = ImageLayout.None;
+            mainVCL.Location = new Point(1232, 174);
+            mainVCL.Name = "formVaccinationList1";
+            mainVCL.Size = new Size(377, 532);
+            mainVCL.TabIndex = 4;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(133, 38);
-            label2.TabIndex = 5;
-            label2.Text = "Перекур";
-            label2.Click += label2_Click;
+            Exit_bt.AutoSize = true;
+            Exit_bt.BackColor = Color.Transparent;
+            Exit_bt.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Exit_bt.ForeColor = Color.Black;
+            Exit_bt.Location = new Point(0, 0);
+            Exit_bt.Name = "label2";
+            Exit_bt.Size = new Size(133, 38);
+            Exit_bt.TabIndex = 5;
+            Exit_bt.Text = "Перекур";
+            Exit_bt.Click += exitClick;
             // 
             // button1
             // 
@@ -112,7 +112,7 @@
             button1.Size = new Size(357, 186);
             button1.TabIndex = 6;
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += decideClick;
             // 
             // button2
             // 
@@ -126,7 +126,7 @@
             button2.Size = new Size(357, 186);
             button2.TabIndex = 7;
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button1_Click;
+            button2.Click += decideClick;
             // 
             // FormGame
             // 
@@ -135,11 +135,11 @@
             BackgroundImage = Properties.Resources.Table;
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(label2);
-            Controls.Add(formVaccinationList1);
+            Controls.Add(Exit_bt);
+            Controls.Add(mainVCL);
             Controls.Add(Score);
             Controls.Add(permission1);
-            Controls.Add(vaccinationList1);
+            Controls.Add(NVCL);
             Controls.Add(pasport1);
             Name = "FormGame";
             Size = new Size(1653, 926);
@@ -150,13 +150,13 @@
 
         #endregion
 
-        private Label label1;
+
         private FormPasport pasport1;
-        private FormNamedVCList vaccinationList1;
+        private FormNamedVCList NVCL;
         private Permission permission1;
         private Label Score;
-        private FormVaccinationList formVaccinationList1;
-        public Label label2 { get; private set; }
+        private FormVaccinationList mainVCL;
+        public Label Exit_bt { get; private set; }
         private Button button1;
         private Button button2;
     }

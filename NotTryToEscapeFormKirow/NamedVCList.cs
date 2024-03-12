@@ -18,7 +18,6 @@ namespace NotTryToEscapeFormKirow
             vaccinationList = vcl.vaccinationList;
         }
         protected NamedVaccinationList() { }
-
     }
 
     partial class FormNamedVCList : FormVaccinationList
